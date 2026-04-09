@@ -5,7 +5,7 @@ namespace controller;
 
 class ClienteController{
     public function index(){
-        require __DIR__ . '/../../view/pagina-inicial.php';
+        require __DIR__ . '/../view/pagina-inicial.php';
 
     }
 }
