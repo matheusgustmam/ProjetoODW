@@ -16,6 +16,8 @@ class FileUpload
             $dotenv = Dotenv::createImmutable(dirname(__DIR__, 2));
             $dotenv->load();
 
+            /cria uma instancia do cloudinari
+            /atraves da URL de conexao presente no arquivo .env    
             self::$storage = new Cloudinary($_ENV['CLOUDINARY_URL']);
         }
         return self::$storage;
@@ -24,6 +26,7 @@ class FileUpload
     public static function uploadImagem($pasta, $imagem, $idPublico)
     {
         try {
+            //Captura a API de upload do Clounarie
             $uploadAPI = self::getStorage()->uploadApi();
 
             $result = $uploadAPI->upload($imagem, [
