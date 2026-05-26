@@ -26,6 +26,8 @@ class Cliente extends GenericModel{
         targetEntity:Contato::class, fetch: 'LAZY', orphanRemoval: true, cascade: ['all'],)]
     private $contatos;
 
+    #[ORM\Column(type: 'string', nullable: true)]
+    private $urlFotoPerfil;
 
     public function setNome($nome){
         $this->nome = $nome;
